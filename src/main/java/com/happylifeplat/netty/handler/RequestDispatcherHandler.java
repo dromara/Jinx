@@ -26,10 +26,22 @@ import static io.netty.handler.codec.http.HttpHeaders.Names.CONTENT_TYPE;
 import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
 
 
+/**
+ * <p>Description: .</p>
+ * <p>Company: 深圳市旺生活互联网科技有限公司</p>
+ * <p>Copyright: 2015-2017 happylifeplat.com All Rights Reserved</p>
+ * netty servlet处理 在inbound中流转
+ * 经过filter过滤，最后进行springMvc调用
+ *
+ * @author yu.xiao@happylifeplat.com
+ * @version 1.0
+ * @date 2017/5/11 18:02
+ * @since JDK 1.8
+ */
 @ChannelHandler.Sharable
 public class RequestDispatcherHandler extends SimpleChannelInboundHandler<NettyHttpServletRequest> {
 
-    private final Log                  logger = LogFactory.getLog(getClass());
+    private final Log logger = LogFactory.getLog(getClass());
     private final NettyEmbeddedContext context;
 
     public RequestDispatcherHandler(NettyEmbeddedContext context) {
@@ -52,9 +64,8 @@ public class RequestDispatcherHandler extends SimpleChannelInboundHandler<NettyH
                 return;
             }
             dispatcher.dispatch(request, servletResponse);
-            ChannelFuture writeFuture = ctx.writeAndFlush(servletResponse);
-            writeFuture.addListener(ChannelFutureListener.CLOSE);
-        } finally {
+        }
+        finally {
             ChannelThreadLocal.unset();
             if (!request.isAsyncStarted()) {
                 try {

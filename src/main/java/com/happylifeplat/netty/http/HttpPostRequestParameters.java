@@ -9,7 +9,16 @@ import io.netty.handler.codec.http.QueryStringDecoder;
 import java.util.List;
 import java.util.Map;
 
-
+/**
+ * <p>Description: .</p>
+ * <p>Company: 深圳市旺生活互联网科技有限公司</p>
+ * <p>Copyright: 2015-2017 happylifeplat.com All Rights Reserved</p>
+ *
+ * @author yu.xiao@happylifeplat.com
+ * @version 1.0
+ * @date 2017/5/12 16:46
+ * @since JDK 1.8
+ */
 public class HttpPostRequestParameters {
 
     private final HttpRequest               request;

@@ -4,6 +4,17 @@ package com.happylifeplat.netty.utils;
 import com.happylifeplat.netty.context.NettyEmbeddedContext;
 import org.apache.commons.lang3.StringUtils;
 
+
+/**
+ * <p>Description: .</p>
+ * <p>Company: 深圳市旺生活互联网科技有限公司</p>
+ * <p>Copyright: 2015-2017 happylifeplat.com All Rights Reserved</p>
+ *  uri解析类
+ * @author yu.xiao@happylifeplat.com
+ * @version 1.0
+ * @date 2017/5/12 16:46
+ * @since JDK 1.8
+ */
 public class URIParser {
 
     private NettyEmbeddedContext context;
@@ -21,24 +32,24 @@ public class URIParser {
     }
 
     public void parse(String uri) {
-        int indx = uri.indexOf('?');
+        /**
+         * 如果有contextPath 需要去掉
+         */
+        if (StringUtils.isNoneBlank(context.getContextPath())) {
+            uri=uri.replaceAll(context.getContextPath(),"");
+        }
+        int index = uri.indexOf('?');
         this.servletPath = this.context.getMatchingUrlPattern(uri);
         if (!this.servletPath.startsWith("/")) {
             this.servletPath = "/" + this.servletPath;
         }
-
-        if (StringUtils.isNoneBlank(context.getContextPath())) {
-            this.requestUri = uri.replaceAll(context.getContextPath(),"");
-            this.servletPath = uri.replaceAll(context.getContextPath(),"");
-            this.pathInfo= uri.replaceAll(context.getContextPath(),"");
+        if (index != -1) {
+            this.pathInfo = uri.substring(servletPath.length(), index);
+            this.queryString = uri.substring(index + 1);
+            this.requestUri = uri.substring(0, index);
         } else {
+            this.pathInfo = uri.substring(servletPath.length());
             this.requestUri = uri;
-        }
-
-        if (indx != -1) {
-            this.pathInfo = uri.substring(servletPath.length(), indx);
-            this.queryString = uri.substring(indx + 1);
-            this.requestUri = uri.substring(0, indx);
         }
 
         if (this.requestUri.endsWith("/")) {

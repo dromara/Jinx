@@ -3,15 +3,12 @@
  */
 package com.happylifeplat.netty.dispatcher;
 
-import io.netty.handler.codec.http.HttpResponse;
-
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.Servlet;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Iterator;
 

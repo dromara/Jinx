@@ -57,7 +57,6 @@ public class ServletContentHandler extends SimpleChannelInboundHandler<FullHttpR
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, FullHttpRequest request) throws Exception {
         if (request != null) {
-
             //X-Real-IP
             Optional<String> option = Optional.ofNullable(request.headers().get("X-Forwarded-For"));
             String real = option.orElseGet(() -> request.headers().get("X-Real-IP"));
