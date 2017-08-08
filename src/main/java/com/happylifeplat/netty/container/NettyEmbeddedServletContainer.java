@@ -41,7 +41,6 @@ public class NettyEmbeddedServletContainer implements EmbeddedServletContainer {
 
     private final Log logger = LogFactory.getLog(getClass());
     private final NettyEmbeddedContext context;
-
     private EventLoopGroup bossGroup;
     private EventLoopGroup workerGroup;
     private DefaultEventExecutorGroup servletExecutor;
