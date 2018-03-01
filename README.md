@@ -1,7 +1,7 @@
-happylifeplat-netty
+Jinx-netty
 ================
 
-旺生活平台采用netty取代tomcat做http服务的实现
+Spring-boot框架采用netty取代tomcat 来做http服务
 
 
 #### Spring-boot用户

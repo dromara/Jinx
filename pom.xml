@@ -4,17 +4,49 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>com.happylifeplat</groupId>
-        <artifactId>platform</artifactId>
-        <version>1.1.0</version>
-    </parent>
-
-    <groupId>com.happylife.netty</groupId>
-    <artifactId>happylife-netty</artifactId>
+    <groupId>com.Jinx.netty</groupId>
+    <artifactId>Jinx-netty</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.9.RELEASE</version>
+    </parent>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/yu199195/Jinx.git</url>
+    </scm>
+
+
+    <developers>
+        <developer>
+            <id>xiaoyu</id>
+            <name>xiaoyu(Myth)</name>
+            <email>549477611@qq.com</email>
+            <organization>free</organization>
+            <roles>
+                <role>Developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jdk.version>1.8</jdk.version>
+        <spring.version>4.3.9.RELEASE</spring.version>
+        <commons-lang3.version>3.3.2</commons-lang3.version>
+        <guava.version>21.0</guava.version>
+        <nettty.version>4.1.12.Final</nettty.version>
+    </properties>
     <dependencies>
         <!-- spring dependency -->
         <dependency>
@@ -62,17 +94,17 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
         </dependency>
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
-            <version>4.1.12.Final</version>
-            <type>jar</type>
+            <version>${nettty.version}</version>
         </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <type>jar</type>
+            <version>${guava.version}</version>
         </dependency>
         <dependency>
             <groupId>org.javassist</groupId>
@@ -91,7 +123,7 @@
     </dependencies>
 
     <build>
-        <finalName>happylife-netty</finalName>
+        <finalName>Jinx-netty</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -116,26 +148,5 @@
     </build>
 
 
-    <repositories>
-        <repository>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <id>public</id>
-            <name>happylifeplat public repository</name>
-            <url>http://maven.wang-guanjia.com/nexus/content/groups/public/</url>
-        </repository>
-    </repositories>
-
-    <distributionManagement>
-        <repository>
-            <id>releases</id>
-            <url>http://maven.wang-guanjia.com/nexus/content/repositories/releases</url>
-        </repository>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <url>http://maven.wang-guanjia.com/nexus/content/repositories/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
 
 </project>
