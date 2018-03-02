@@ -21,6 +21,7 @@ package com.jinx.netty.config;
  * @author xiaoyu
  */
 public class NettyContainerConfig extends ContainerConfig {
+
     /**
      * 服务启动端口
      */
