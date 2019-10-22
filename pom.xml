@@ -45,7 +45,7 @@
         <spring.version>4.3.9.RELEASE</spring.version>
         <commons-lang3.version>3.3.2</commons-lang3.version>
         <guava.version>21.0</guava.version>
-        <nettty.version>4.1.24.Final</nettty.version>
+        <nettty.version>4.1.42.Final</nettty.version>
     </properties>
     <dependencies>
         <!-- spring dependency -->
