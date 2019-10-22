@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.Jinx.netty</groupId>
-    <artifactId>Jinx-netty</artifactId>
+    <groupId>org.droamra</groupId>
+    <artifactId>Jinx</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -23,7 +23,7 @@
         </license>
     </licenses>
     <scm>
-        <url>https://github.com/yu199195/Jinx.git</url>
+        <url>https://github.com/dromara/Jinx.git</url>
     </scm>
 
 
@@ -32,7 +32,7 @@
             <id>xiaoyu</id>
             <name>xiaoyu(Myth)</name>
             <email>549477611@qq.com</email>
-            <organization>free</organization>
+            <organization>org.dromara</organization>
             <roles>
                 <role>Developer</role>
             </roles>
@@ -45,7 +45,7 @@
         <spring.version>4.3.9.RELEASE</spring.version>
         <commons-lang3.version>3.3.2</commons-lang3.version>
         <guava.version>21.0</guava.version>
-        <nettty.version>4.1.12.Final</nettty.version>
+        <nettty.version>4.1.24.Final</nettty.version>
     </properties>
     <dependencies>
         <!-- spring dependency -->
@@ -123,7 +123,7 @@
     </dependencies>
 
     <build>
-        <finalName>Jinx-netty</finalName>
+        <finalName>Jinx</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
